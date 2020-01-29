@@ -1,2 +1,2 @@
-include ':app'
+include ':android', ':shared'
 rootProject.name='FlickrMultiplatform'
