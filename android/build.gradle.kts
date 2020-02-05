@@ -1,10 +1,10 @@
-val buildToolsVersion: String by extra
-val kotlinVersion: String by extra
-val androidxBaseVersion: String by extra
-val androidxUiVersion: String by extra
-val androidMaterialVersion: String by extra
-val androidConstraintLayoutVersion: String by extra
-val androidMultidexVersion: String by extra
+val buildToolsVersion: String by project
+val kotlinVersion: String by project
+val androidxBaseVersion: String by project
+val androidxUiVersion: String by project
+val androidMaterialVersion: String by project
+val androidConstraintLayoutVersion: String by project
+val androidMultidexVersion: String by project
 
 plugins {
     id("com.android.application")
