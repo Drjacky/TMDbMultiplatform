@@ -8,7 +8,7 @@ val androidMultidexVersion: String by extra
 
 plugins {
     id("com.android.application")
-    id("kotlin-multiplatform")
+    id("kotlin-android")
     id("kotlin-android-extensions")
 }
 
@@ -43,20 +43,11 @@ android {
     }
 }
 
-kotlin {
-    android()
-
-    sourceSets {
-        val androidMain by getting {
-            dependencies {
-                implementation("androidx.appcompat:appcompat:$androidxBaseVersion")
-                implementation("androidx.core:core-ktx:$androidxBaseVersion")
-                implementation("androidx.vectordrawable:vectordrawable:$androidxBaseVersion")
-                implementation("com.google.android.material:material:$androidMaterialVersion")
-                implementation("androidx.constraintlayout:constraintlayout:$androidConstraintLayoutVersion")
-                implementation("com.android.support:multidex:$androidMultidexVersion")
-                implementation(project(":shared"))
-            }
-        }
-    }
+dependencies {
+    implementation("androidx.appcompat:appcompat:$androidxBaseVersion")
+    implementation("androidx.core:core-ktx:$androidxBaseVersion")
+    implementation("com.google.android.material:material:$androidMaterialVersion")
+    implementation("androidx.constraintlayout:constraintlayout:$androidConstraintLayoutVersion")
+    implementation("com.android.support:multidex:$androidMultidexVersion")
+    implementation(project(":shared"))
 }
