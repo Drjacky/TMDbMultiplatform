@@ -33,10 +33,11 @@ android {
         }
     }
     sourceSets {
-        val main by getting
-        main.java.srcDirs("src/main/kotlin")
-        main.manifest.srcFile("src/main/AndroidManifest.xml")
-        main.res.srcDirs("src/main/res")
+        val main by getting {
+            java.srcDirs("src/main/kotlin")
+            manifest.srcFile("src/main/AndroidManifest.xml")
+            res.srcDirs("src/main/res")
+        }
     }
     packagingOptions {
         exclude("META-INF/*.kotlin_module")
