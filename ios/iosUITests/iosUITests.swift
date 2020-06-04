@@ -2,14 +2,15 @@
 //  iosUITests.swift
 //  iosUITests
 //
-//  Created by Hossein Abbasi on 2/5/20.
+//  Created by Hossein Abbasi on 6/4/20.
+//  Copyright © 2020 Hossein Abbasi. All rights reserved.
 //
 
 import XCTest
 
 class iosUITests: XCTestCase {
 
-    override func setUp() {
+    override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
@@ -18,11 +19,11 @@ class iosUITests: XCTestCase {
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDown() {
+    override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
@@ -31,7 +32,7 @@ class iosUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
-    func testLaunchPerformance() {
+    func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
             measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
