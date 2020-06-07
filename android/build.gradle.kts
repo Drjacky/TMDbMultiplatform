@@ -16,7 +16,7 @@ android {
     compileSdkVersion(29)
     buildToolsVersion = buildToolsVersion
     defaultConfig {
-        applicationId = "app.web.drjackycv.flickrmultiplatform"
+        applicationId = "app.web.drjackycv.beermultiplatform"
         minSdkVersion(21)
         targetSdkVersion(29)
         multiDexEnabled = true

@@ -1,8 +1,8 @@
-package app.web.drjackycv.flickrmultiplatform
+package app.web.drjackycv.beermultiplatform
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import app.web.drjackycv.flickrmultiplatform.shared.HelloWorldMessage
+import app.web.drjackycv.beermultiplatform.shared.HelloWorldMessage
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
