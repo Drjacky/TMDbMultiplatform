@@ -14,4 +14,4 @@ enableFeaturePreview("GRADLE_METADATA")
 
 
 include(":android", ":shared")
-rootProject.name = "BeerMultiplatform"
+rootProject.name = "OMDbMultiplatform"

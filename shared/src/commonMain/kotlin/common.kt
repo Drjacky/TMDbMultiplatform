@@ -1,4 +1,4 @@
-package app.web.drjackycv.beermultiplatform.shared
+package app.web.drjackycv.omdbmultiplatform.shared
 
 expect fun platformName(): String
 
