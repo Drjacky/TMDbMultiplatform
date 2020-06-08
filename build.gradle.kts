@@ -26,6 +26,9 @@ allprojects {
         google()
         jcenter()
     }
+
+    //In case of the same error explained here(https://youtrack.jetbrains.com/issue/KT-27170), uncomment below line:
+    //configurations.create("compileClasspath")
 }
 
 tasks.register<Delete>("clean") {

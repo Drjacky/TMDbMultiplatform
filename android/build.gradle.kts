@@ -50,5 +50,6 @@ dependencies {
     implementation("com.google.android.material:material:$androidMaterialVersion")
     implementation("androidx.constraintlayout:constraintlayout:$androidConstraintLayoutVersion")
     implementation("com.android.support:multidex:$androidMultidexVersion")
+
     implementation(project(":shared"))
 }
