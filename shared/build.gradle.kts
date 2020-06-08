@@ -3,10 +3,12 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 val buildToolsVersion: String by project
 val kotlinVersion: String by extra
 val reactiveVersion: String by extra
+val kotlinSerializationVersion: String by extra
 
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
+    kotlin("plugin.serialization") version org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
 }
 
 android {
@@ -50,6 +52,7 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-stdlib")
                 implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlinSerializationVersion")
             }
         }
 
@@ -61,12 +64,20 @@ kotlin {
             dependencies {
                 api("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
                 api("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
+                api("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinSerializationVersion")
             }
         }
 
         val androidMain by getting {
             dependsOn(mobileMain)
             dependsOn(jvmMain)
+        }
+
+        val iosMain by getting {
+            dependsOn(mobileMain)
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlinSerializationVersion")
+            }
         }
     }
 
