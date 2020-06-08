@@ -1,5 +1,7 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
+val reactiveVersion: String by extra
+
 plugins {
     kotlin("multiplatform")
 }
@@ -26,6 +28,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+                implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
             }
         }
 
