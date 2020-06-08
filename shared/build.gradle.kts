@@ -1,13 +1,34 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
+val buildToolsVersion: String by project
+val kotlinVersion: String by extra
 val reactiveVersion: String by extra
 
 plugins {
+    id("com.android.library")
     kotlin("multiplatform")
 }
 
+android {
+    compileSdkVersion(29)
+    buildToolsVersion = buildToolsVersion
+    defaultConfig {
+        minSdkVersion(21)
+        targetSdkVersion(29)
+    }
+    sourceSets {
+        val main by getting {
+            java.srcDirs("src/androidMain/kotlin")
+            manifest.srcFile("src/androidMain/AndroidManifest.xml")
+            res.srcDirs("src/androidMain/res")
+        }
+    }
+}
+
 kotlin {
-    jvm("android")
+    jvm()
+    //jvm("android")
+    android()
 
     //select iOS target platform depending on the Xcode environment variables
     val iOSTarget: (String, KotlinNativeTarget.() -> Unit) -> KotlinNativeTarget =
@@ -27,16 +48,25 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+                implementation("org.jetbrains.kotlin:kotlin-stdlib")
                 implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
             }
         }
 
-        val androidMain by getting {
+        val mobileMain by creating {
             dependsOn(commonMain)
+        }
+
+        val jvmMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlin:kotlin-stdlib")
+                api("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+                api("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
             }
+        }
+
+        val androidMain by getting {
+            dependsOn(mobileMain)
+            dependsOn(jvmMain)
         }
     }
 
