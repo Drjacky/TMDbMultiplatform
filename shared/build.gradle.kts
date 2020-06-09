@@ -4,6 +4,8 @@ val buildToolsVersion: String by project
 val kotlinVersion: String by extra
 val reactiveVersion: String by extra
 val kotlinSerializationVersion: String by extra
+val ktorVersion: String by extra
+val coroutinesVersion: String by extra
 
 plugins {
     id("com.android.library")
@@ -51,8 +53,11 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-stdlib")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutinesVersion")
                 implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlinSerializationVersion")
+                implementation("io.ktor:ktor-client-core:$ktorVersion")
+                implementation("io.ktor:ktor-client-serialization:$ktorVersion")
             }
         }
 
@@ -63,8 +68,11 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 api("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
-                api("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
+                api("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
                 api("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinSerializationVersion")
+                api("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
+                api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                api("io.ktor:ktor-client-core-jvm:$ktorVersion")
             }
         }
 
@@ -76,7 +84,10 @@ kotlin {
         val iosMain by getting {
             dependsOn(mobileMain)
             dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutinesVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlinSerializationVersion")
+                implementation("io.ktor:ktor-client-ios:$ktorVersion")
+                implementation("io.ktor:ktor-client-serialization-native:$ktorVersion")
             }
         }
     }

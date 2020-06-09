@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
     val kotlinVersion: String by extra
     val gradleAndroidVersion: String by extra
@@ -16,10 +18,17 @@ buildscript {
     }
 }
 
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 allprojects {
     repositories {
         mavenCentral()
         maven("https://dl.bintray.com/kotlin/kotlinx")
+        maven("https://dl.bintray.com/kotlin/ktor")
         maven("https://dl.bintray.com/kotlin/kotlin-dev")
         maven("https://dl.bintray.com/badoo/maven")
 

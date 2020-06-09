@@ -5,11 +5,16 @@ val androidxUiVersion: String by project
 val androidMaterialVersion: String by project
 val androidConstraintLayoutVersion: String by project
 val androidMultidexVersion: String by project
+val ktorVersion: String by project
 
 plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
+}
+
+androidExtensions {
+    isExperimental = true
 }
 
 android {
@@ -50,6 +55,7 @@ dependencies {
     implementation("com.google.android.material:material:$androidMaterialVersion")
     implementation("androidx.constraintlayout:constraintlayout:$androidConstraintLayoutVersion")
     implementation("com.android.support:multidex:$androidMultidexVersion")
+    implementation("io.ktor:ktor-client-android:$ktorVersion")
 
     implementation(project(":shared"))
 }
