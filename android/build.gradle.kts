@@ -9,7 +9,7 @@ val ktorVersion: String by project
 
 plugins {
     id("com.android.application")
-    id("kotlin-android")
+    kotlin("android") // = id("kotlin-android")
     id("kotlin-android-extensions")
 }
 
