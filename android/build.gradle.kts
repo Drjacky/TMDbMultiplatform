@@ -6,11 +6,13 @@ val androidMaterialVersion: String by project
 val androidConstraintLayoutVersion: String by project
 val androidMultidexVersion: String by project
 val ktorVersion: String by project
+val glideVersion: String by project
 
 plugins {
     id("com.android.application")
     kotlin("android") // = id("kotlin-android")
-    id("kotlin-android-extensions")
+    kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 androidExtensions {
@@ -56,6 +58,9 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:$androidConstraintLayoutVersion")
     implementation("com.android.support:multidex:$androidMultidexVersion")
     implementation("io.ktor:ktor-client-android:$ktorVersion")
+    implementation("com.github.bumptech.glide:glide:$glideVersion")
+    kapt("com.github.bumptech.glide:compiler:$glideVersion")
+    kapt("com.github.bumptech.glide:compiler:$glideVersion")
 
     implementation(project(":shared"))
 }
