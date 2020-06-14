@@ -2,8 +2,6 @@ package app.web.drjackycv.omdbmultiplatform
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import app.web.drjackycv.omdbmultiplatform.shared.HelloWorldMessage
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
-        mainMessageTxt.text = HelloWorldMessage()
+        //mainMessageTxt.text = HelloWorldMessage()
     }
 
 }
