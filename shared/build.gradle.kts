@@ -45,6 +45,7 @@ kotlin {
         binaries {
             framework {
                 baseName = "shared"
+                freeCompilerArgs += "-Xobjc-generics"
             }
         }
     }

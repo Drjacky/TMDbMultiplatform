@@ -60,7 +60,6 @@ dependencies {
     implementation("io.ktor:ktor-client-android:$ktorVersion")
     implementation("com.github.bumptech.glide:glide:$glideVersion")
     kapt("com.github.bumptech.glide:compiler:$glideVersion")
-    kapt("com.github.bumptech.glide:compiler:$glideVersion")
 
     implementation(project(":shared"))
 }
