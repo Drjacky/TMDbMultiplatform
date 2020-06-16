@@ -6,7 +6,8 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class MovieUI(
     val title: String,
+    val year: String,
     val imdbID: String,
-    val rated: String,
+    val type: String,
     val poster: String
 ) : Parcelable

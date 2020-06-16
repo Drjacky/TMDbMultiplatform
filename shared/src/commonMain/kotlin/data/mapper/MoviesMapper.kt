@@ -1,13 +1,13 @@
-package app.web.drjackycv.omdbmultiplatform.presentation.mapper
+package app.web.drjackycv.omdbmultiplatform.shared.data.mapper
 
-import app.web.drjackycv.omdbmultiplatform.presentation.entity.MovieUI
 import app.web.drjackycv.omdbmultiplatform.shared.data.base.mapper.Mapper
 import app.web.drjackycv.omdbmultiplatform.shared.data.entity.Movie
+import app.web.drjackycv.omdbmultiplatform.shared.data.entity.MoviesResponse
 
-class MoviesMapper : Mapper<List<Movie>, List<MovieUI>> {
+class MoviesMapper : Mapper<MoviesResponse, List<Movie>> {
 
-    override fun mapTo(response: List<Movie>): List<MovieUI> = response.map {
-        MovieUI(
+    override fun mapTo(response: MoviesResponse): List<Movie> = response.items.map {
+        Movie(
             title = it.title,
             year = it.year,
             imdbID = it.imdbID,
