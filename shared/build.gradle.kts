@@ -94,6 +94,10 @@ kotlin {
                 implementation("io.ktor:ktor-client-logging-native:$ktorVersion")
             }
         }
+
+        all {
+            languageSettings.useExperimentalAnnotation("kotlin.RequiresOptIn")
+        }
     }
 
 }
