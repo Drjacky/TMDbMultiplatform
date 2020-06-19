@@ -59,6 +59,7 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlinSerializationVersion")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
+                implementation("io.ktor:ktor-client-logging:$ktorVersion")
             }
         }
 
@@ -74,6 +75,7 @@ kotlin {
                 api("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
                 api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
                 api("io.ktor:ktor-client-core-jvm:$ktorVersion")
+                api("io.ktor:ktor-client-logging-jvm:$ktorVersion")
             }
         }
 
@@ -89,6 +91,7 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlinSerializationVersion")
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization-native:$ktorVersion")
+                implementation("io.ktor:ktor-client-logging-native:$ktorVersion")
             }
         }
     }
