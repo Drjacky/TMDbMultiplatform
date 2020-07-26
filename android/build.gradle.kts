@@ -7,6 +7,7 @@ val androidConstraintLayoutVersion: String by project
 val androidMultidexVersion: String by project
 val ktorVersion: String by project
 val glideVersion: String by project
+val reactiveVersion: String by project
 
 plugins {
     id("com.android.application")
@@ -65,6 +66,7 @@ dependencies {
     implementation("io.ktor:ktor-client-android:$ktorVersion")
     implementation("com.github.bumptech.glide:glide:$glideVersion")
     kapt("com.github.bumptech.glide:compiler:$glideVersion")
+    implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
 
     implementation(project(":shared"))
 }
