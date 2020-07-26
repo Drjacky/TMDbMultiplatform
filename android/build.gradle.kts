@@ -31,8 +31,13 @@ android {
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
+        val debug by getting {
+            buildConfigField("String", "API_KEY", "\"d69d5cbf\"")
+        }
         val release by getting {
+            buildConfigField("String", "API_KEY", "\"d69d5cbf\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
