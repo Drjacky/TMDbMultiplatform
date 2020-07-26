@@ -1,8 +1,8 @@
-package app.web.drjackycv.omdbmultiplatform.shared.domain.usecase
+package domain.usecase
 
-import app.web.drjackycv.omdbmultiplatform.shared.data.entity.Movie
-import app.web.drjackycv.omdbmultiplatform.shared.domain.base.repository.Repository
-import app.web.drjackycv.omdbmultiplatform.shared.domain.base.usecase.UseCase
+import data.entity.Movie
+import domain.base.repository.Repository
+import domain.base.usecase.UseCase
 
 class GetMoviesUseCaseImpl<R>(
     private val repository: Repository<R, List<Movie>>

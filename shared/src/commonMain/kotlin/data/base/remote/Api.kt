@@ -1,4 +1,4 @@
-package app.web.drjackycv.omdbmultiplatform.shared.data.base.remote
+package data.base.remote
 
 interface Api<in R, T> {
 

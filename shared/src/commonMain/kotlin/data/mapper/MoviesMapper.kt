@@ -1,8 +1,8 @@
-package app.web.drjackycv.omdbmultiplatform.shared.data.mapper
+package data.mapper
 
-import app.web.drjackycv.omdbmultiplatform.shared.data.base.mapper.Mapper
-import app.web.drjackycv.omdbmultiplatform.shared.data.entity.Movie
-import app.web.drjackycv.omdbmultiplatform.shared.data.entity.MoviesResponse
+import data.base.mapper.Mapper
+import data.entity.Movie
+import data.entity.MoviesResponse
 
 class MoviesMapper : Mapper<MoviesResponse, List<Movie>> {
 

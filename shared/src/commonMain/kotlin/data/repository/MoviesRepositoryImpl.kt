@@ -1,8 +1,8 @@
-package app.web.drjackycv.omdbmultiplatform.shared.data.repository
+package data.repository
 
-import app.web.drjackycv.omdbmultiplatform.shared.data.base.remote.Api
-import app.web.drjackycv.omdbmultiplatform.shared.data.entity.Movie
-import app.web.drjackycv.omdbmultiplatform.shared.domain.base.repository.Repository
+import data.base.remote.Api
+import data.entity.Movie
+import domain.base.repository.Repository
 
 class MoviesRepositoryImpl<R>(
     private val api: Api<R, List<Movie>>

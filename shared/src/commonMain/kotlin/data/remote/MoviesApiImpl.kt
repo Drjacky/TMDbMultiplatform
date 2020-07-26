@@ -1,9 +1,9 @@
-package app.web.drjackycv.omdbmultiplatform.shared.data.remote
+package data.remote
 
-import app.web.drjackycv.omdbmultiplatform.shared.data.base.mapper.Mapper
-import app.web.drjackycv.omdbmultiplatform.shared.data.base.remote.Api
-import app.web.drjackycv.omdbmultiplatform.shared.data.entity.Movie
-import app.web.drjackycv.omdbmultiplatform.shared.data.entity.MoviesResponse
+import data.base.mapper.Mapper
+import data.base.remote.Api
+import data.entity.Movie
+import data.entity.MoviesResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer

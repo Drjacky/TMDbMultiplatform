@@ -1,4 +1,4 @@
-package app.web.drjackycv.omdbmultiplatform.shared.domain.base.usecase
+package domain.base.usecase
 
 interface UseCase<in R, T> {
 

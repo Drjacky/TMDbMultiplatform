@@ -1,4 +1,4 @@
-package app.web.drjackycv.omdbmultiplatform.shared.data.entity
+package data.entity
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

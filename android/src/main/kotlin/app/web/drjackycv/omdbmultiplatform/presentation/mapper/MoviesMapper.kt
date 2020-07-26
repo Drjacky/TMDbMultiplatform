@@ -1,8 +1,8 @@
 package app.web.drjackycv.omdbmultiplatform.presentation.mapper
 
 import app.web.drjackycv.omdbmultiplatform.presentation.entity.MovieUI
-import app.web.drjackycv.omdbmultiplatform.shared.data.base.mapper.Mapper
-import app.web.drjackycv.omdbmultiplatform.shared.data.entity.Movie
+import data.base.mapper.Mapper
+import data.entity.Movie
 
 class MoviesMapper : Mapper<List<Movie>, List<MovieUI>> {
 

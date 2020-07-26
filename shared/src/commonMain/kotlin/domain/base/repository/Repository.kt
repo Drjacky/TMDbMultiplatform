@@ -1,4 +1,4 @@
-package app.web.drjackycv.omdbmultiplatform.shared.domain.base.repository
+package domain.base.repository
 
 interface Repository<in R, T> {
 

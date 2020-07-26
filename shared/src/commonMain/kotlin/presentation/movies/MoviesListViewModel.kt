@@ -1,11 +1,11 @@
 package presentation.movies
 
-import app.web.drjackycv.omdbmultiplatform.shared.domain.base.usecase.UseCase
 import com.badoo.reaktive.observable.*
 import com.badoo.reaktive.subject.publish.publishSubject
 import data.base.coroutines.singleFromCoroutine
 import data.base.mapper.Mapper
 import data.entity.Movie
+import domain.base.usecase.UseCase
 import presentation.base.ListViewModel
 import presentation.base.ListViewModelInput
 import presentation.base.ListViewModelOutput
