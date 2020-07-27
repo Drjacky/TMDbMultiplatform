@@ -1,5 +1,5 @@
 # OMDbMultiplatform
-![License](https://img.shields.io/github/license/Drjacky/OMDbMultiplatform?logo=MIT)
+![License](https://img.shields.io/github/license/Drjacky/OMDbMultiplatform)
 ![Article](https://raw.githubusercontent.com/Drjacky/OMDbMultiplatform/master/cover.jpg)
 Link to the [article](https://medium.com/@drjacky/kotlin-multiplatform-rx-mvvm-1fb21280a0b5)
 
