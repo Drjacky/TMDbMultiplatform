@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		371C2C8D24898F6700BC04CB /* iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371C2C8C24898F6700BC04CB /* iosUITests.swift */; };
 		371C2C9C2489942D00BC04CB /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 371C2C9B2489942D00BC04CB /* shared.framework */; };
 		371C2C9D2489942D00BC04CB /* shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 371C2C9B2489942D00BC04CB /* shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37EC695224CED34C005AFB10 /* MovieItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EC695124CED34C005AFB10 /* MovieItem.swift */; };
+		37EC695524CEF684005AFB10 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 37EC695424CEF684005AFB10 /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,7 @@
 		371C2C8C24898F6700BC04CB /* iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosUITests.swift; sourceTree = "<group>"; };
 		371C2C8E24898F6700BC04CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		371C2C9B2489942D00BC04CB /* shared.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = shared.framework; path = "../shared/build/xcode-frameworks/shared.framework"; sourceTree = "<group>"; };
+		37EC695124CED34C005AFB10 /* MovieItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				371C2C9C2489942D00BC04CB /* shared.framework in Frameworks */,
+				37EC695524CEF684005AFB10 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +129,7 @@
 				371C2C7324898F6700BC04CB /* Assets.xcassets */,
 				371C2C7524898F6700BC04CB /* LaunchScreen.storyboard */,
 				371C2C7824898F6700BC04CB /* Info.plist */,
+				37EC695124CED34C005AFB10 /* MovieItem.swift */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -173,6 +178,9 @@
 			dependencies = (
 			);
 			name = ios;
+			packageProductDependencies = (
+				37EC695424CEF684005AFB10 /* Nuke */,
+			);
 			productName = ios;
 			productReference = 371C2C6724898F6500BC04CB /* ios.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +253,9 @@
 				Base,
 			);
 			mainGroup = 371C2C5E24898F6500BC04CB;
+			packageReferences = (
+				37EC695324CEF684005AFB10 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = 371C2C6824898F6500BC04CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -310,6 +321,7 @@
 			files = (
 				371C2C6F24898F6500BC04CB /* ViewController.swift in Sources */,
 				371C2C6B24898F6500BC04CB /* AppDelegate.swift in Sources */,
+				37EC695224CED34C005AFB10 /* MovieItem.swift in Sources */,
 				371C2C6D24898F6500BC04CB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -635,6 +647,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		37EC695324CEF684005AFB10 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		37EC695424CEF684005AFB10 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 37EC695324CEF684005AFB10 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 371C2C5F24898F6500BC04CB /* Project object */;
 }
