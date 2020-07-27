@@ -72,6 +72,11 @@ class MainActivity : AppCompatActivity() {
         mViewModel.inputs.get(KEYWORD)
     }
 
+    override fun onDestroy() {
+        mBinding.dispose() //TODO Move it into view model
+        super.onDestroy()
+    }
+
     private fun binding() {
         mBinding.subscribe(mViewModel.outputs.loading.observeOn(mainScheduler), onNext = ::loading)
         mBinding.subscribe(mViewModel.outputs.result.observeOn(mainScheduler), onNext = ::result)
