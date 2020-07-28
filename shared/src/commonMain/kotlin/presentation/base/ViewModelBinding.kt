@@ -1,13 +1,12 @@
 package presentation.base
 
-import com.badoo.reaktive.disposable.CompositeDisposable
+import com.badoo.reaktive.annotations.ExperimentalReaktiveApi
 import com.badoo.reaktive.disposable.Disposable
+import com.badoo.reaktive.disposable.scope.DisposableScope
 import com.badoo.reaktive.observable.Observable
-import com.badoo.reaktive.observable.subscribe
 
-class ViewModelBinding {
-
-    private val disposables = CompositeDisposable()
+@OptIn(ExperimentalReaktiveApi::class)
+class ViewModelBinding : DisposableScope by DisposableScope() {
 
     fun <T> subscribe(
         observable: Observable<T>,
@@ -17,14 +16,12 @@ class ViewModelBinding {
         onComplete: (() -> Unit)? = null,
         onNext: ((T) -> Unit)? = null
     ) {
-        disposables.add(
-            observable.subscribe(
-                isThreadLocal = isThreadLocal,
-                onSubscribe = onSubscribe,
-                onError = onError,
-                onComplete = onComplete,
-                onNext = onNext
-            )
+        observable.subscribeScoped(
+            isThreadLocal = isThreadLocal,
+            onSubscribe = onSubscribe,
+            onError = onError,
+            onComplete = onComplete,
+            onNext = onNext
         )
     }
 
@@ -33,19 +30,15 @@ class ViewModelBinding {
         onError: ((Throwable) -> Unit)? = null,
         onNext: ((T) -> Unit)? = null
     ) {
-        disposables.add(
-            observable.subscribe(
-                isThreadLocal = true,
-                onError = onError,
-                onNext = onNext
-            )
+        observable.subscribeScoped(
+            isThreadLocal = true,
+            onError = onError,
+            onNext = onNext
         )
     }
 
     fun <T> subscribe(observable: Observable<T>, onNext: ((T) -> Unit)? = null) {
-        disposables.add(observable.subscribe(isThreadLocal = true, onNext = onNext))
+        observable.subscribeScoped(isThreadLocal = true, onNext = onNext)
     }
-
-    fun dispose() = disposables.dispose()
 
 }
