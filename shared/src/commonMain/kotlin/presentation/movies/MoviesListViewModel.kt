@@ -5,22 +5,24 @@ import com.badoo.reaktive.subject.publish.publishSubject
 import data.base.coroutines.singleFromCoroutine
 import data.base.mapper.Mapper
 import data.entity.Movie
+import di.Di
 import domain.base.usecase.UseCase
+import org.kodein.di.instance
 import presentation.base.ListViewModel
 import presentation.base.ListViewModelInput
 import presentation.base.ListViewModelOutput
 
-class MoviesListViewModel<R, E>(
-    useCase: UseCase<R, List<Movie>>,
+class MoviesListViewModel<E>(
     mapper: Mapper<List<Movie>, List<E>>?
-) : ListViewModel<R, E>, ListViewModelInput<R>, ListViewModelOutput<R, E> {
-    override val inputs: ListViewModelInput<R> = this
-    override val outputs: ListViewModelOutput<R, E> = this
+) : ListViewModel<String, E>, ListViewModelInput<String>, ListViewModelOutput<String, E> {
+    override val inputs: ListViewModelInput<String> = this
+    override val outputs: ListViewModelOutput<String, E> = this
     override val loading: Observable<Boolean>
     override val result: Observable<List<E>>
 
-    private val mListProperty = publishSubject<R>()
-    private val mLoadMoreProperty = publishSubject<R>()
+    val useCase: UseCase<String, List<Movie>> by Di.di.instance("UseCase")
+    private val mListProperty = publishSubject<String>()
+    private val mLoadMoreProperty = publishSubject<String>()
 
     init {
         val loadingProperty = publishSubject<Boolean>()
@@ -66,11 +68,11 @@ class MoviesListViewModel<R, E>(
 
     }
 
-    override fun get(request: R) {
+    override fun get(request: String) {
         mListProperty.onNext(request)
     }
 
-    override fun loadMore(request: R) {
+    override fun loadMore(request: String) {
         mLoadMoreProperty.onNext(request)
     }
 

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 val buildToolsVersion: String by project
 val kotlinVersion: String by project
 val androidxBaseVersion: String by project
@@ -8,6 +10,7 @@ val androidMultidexVersion: String by project
 val ktorVersion: String by project
 val glideVersion: String by project
 val reactiveVersion: String by project
+val kodeinVersion: String by project
 
 plugins {
     id("com.android.application")
@@ -34,11 +37,8 @@ android {
     }
 
     buildTypes {
-        val debug by getting {
-            buildConfigField("String", "API_KEY", "\"d69d5cbf\"")
-        }
+        val debug by getting {}
         val release by getting {
-            buildConfigField("String", "API_KEY", "\"d69d5cbf\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
@@ -57,6 +57,12 @@ android {
     }
 }
 
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
 dependencies {
     implementation("androidx.appcompat:appcompat:$androidxBaseVersion")
     implementation("androidx.core:core-ktx:$androidxBaseVersion")
@@ -67,6 +73,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:$glideVersion")
     kapt("com.github.bumptech.glide:compiler:$glideVersion")
     implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
+    implementation("org.kodein.di:kodein-di-framework-android-x:$kodeinVersion")
 
     implementation(project(":shared"))
 }

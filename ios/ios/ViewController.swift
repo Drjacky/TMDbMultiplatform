@@ -50,15 +50,9 @@ class ViewController: UIViewController {
         return v
     }()
     
-    private lazy var _viewModel: MoviesListViewModel<NSString, Movie> = {
+    private lazy var _viewModel: MoviesListViewModel<Movie> = {
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        
-        let mapper = MoviesMapper()
-        let api = MoviesApiImpl(key: "b445ca0b", hostUrl: "https://www.omdbapi.com/", mapper: mapper)
-        let repository = MoviesRepositoryImpl<NSString>(api: api)
-        let useCase = GetMoviesUseCaseImpl<NSString>(repository: repository)
-        
-        let viewModel = MoviesListViewModel<NSString, Movie>(useCase: useCase, mapper: nil)
+        let viewModel = MoviesListViewModel<Movie>(mapper: nil)
         
         return viewModel
     }()

@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 val buildToolsVersion: String by project
 val kotlinVersion: String by extra
@@ -6,6 +7,7 @@ val reactiveVersion: String by extra
 val kotlinSerializationVersion: String by extra
 val ktorVersion: String by extra
 val coroutinesVersion: String by extra
+val kodeinVersion: String by extra
 
 plugins {
     id("com.android.library")
@@ -60,6 +62,7 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("io.ktor:ktor-client-logging:$ktorVersion")
+                implementation("org.kodein.di:kodein-di:$kodeinVersion")
             }
         }
 
@@ -100,6 +103,12 @@ kotlin {
         }
     }
 
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 val packForXcode by tasks.creating(Sync::class) {

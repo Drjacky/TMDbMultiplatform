@@ -5,23 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import app.web.drjackycv.omdbmultiplatform.BuildConfig
 import app.web.drjackycv.omdbmultiplatform.R
 import app.web.drjackycv.omdbmultiplatform.presentation.adapter.MoviesAdapter
 import app.web.drjackycv.omdbmultiplatform.presentation.entity.MovieUI
 import app.web.drjackycv.omdbmultiplatform.presentation.mapper.MoviesUIMapper
 import com.badoo.reaktive.observable.observeOn
 import com.badoo.reaktive.scheduler.mainScheduler
-import data.mapper.MoviesMapper
-import data.remote.MoviesApiImpl
-import data.repository.MoviesRepositoryImpl
-import domain.usecase.GetMoviesUseCaseImpl
 import kotlinx.android.synthetic.main.activity_main.*
 import presentation.base.ListViewModel
 import presentation.base.ViewModelBinding
 import presentation.movies.MoviesListViewModel
 
-private const val API_KEY = BuildConfig.API_KEY
 private const val KEYWORD = "avenger"
 
 class MainActivity : AppCompatActivity() {
@@ -30,13 +24,9 @@ class MainActivity : AppCompatActivity() {
     private var mIsRefreshing = false
     private val mBinding = ViewModelBinding()
     private val mViewModel: ListViewModel<String, MovieUI> by lazy {
-        val moviesMapper = MoviesMapper()
-        val api = MoviesApiImpl("b445ca0b", "https://www.omdbapi.com/", moviesMapper)
-        val repository = MoviesRepositoryImpl(api)
-        val useCase = GetMoviesUseCaseImpl(repository)
         val moviesUiMapper = MoviesUIMapper()
 
-        MoviesListViewModel(useCase, moviesUiMapper)
+        MoviesListViewModel(moviesUiMapper)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

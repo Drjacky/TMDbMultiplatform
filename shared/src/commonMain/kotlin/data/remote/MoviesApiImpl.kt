@@ -5,12 +5,6 @@ import data.base.remote.Api
 import data.entity.Movie
 import data.entity.MoviesResponse
 import io.ktor.client.HttpClient
-import io.ktor.client.features.json.JsonFeature
-import io.ktor.client.features.json.serializer.KotlinxSerializer
-import io.ktor.client.features.logging.DEFAULT
-import io.ktor.client.features.logging.LogLevel
-import io.ktor.client.features.logging.Logger
-import io.ktor.client.features.logging.Logging
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.get
 import io.ktor.client.request.header
@@ -23,6 +17,7 @@ import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 
 class MoviesApiImpl(
+    private val client: HttpClient,
     private val key: String,
     private val hostUrl: String,
     private val mapper: Mapper<MoviesResponse, List<Movie>>
@@ -52,16 +47,6 @@ class MoviesApiImpl(
             path?.let {
                 encodedPath = it
             }
-        }
-    }
-
-    private val client = HttpClient {
-        install(JsonFeature) {
-            serializer = KotlinxSerializer()
-        }
-        install(Logging) {
-            logger = Logger.DEFAULT
-            level = LogLevel.ALL
         }
     }
 
