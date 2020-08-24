@@ -27,7 +27,7 @@ android {
     compileSdkVersion(29)
     buildToolsVersion = buildToolsVersion
     defaultConfig {
-        applicationId = "app.web.drjackycv.omdbmultiplatform"
+        applicationId = "app.web.drjackycv.tmdbmultiplatform"
         minSdkVersion(21)
         targetSdkVersion(29)
         multiDexEnabled = true

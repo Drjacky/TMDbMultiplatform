@@ -1,14 +1,14 @@
-package app.web.drjackycv.omdbmultiplatform.presentation.ui
+package app.web.drjackycv.tmdbmultiplatform.presentation.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import app.web.drjackycv.omdbmultiplatform.R
-import app.web.drjackycv.omdbmultiplatform.presentation.adapter.MoviesAdapter
-import app.web.drjackycv.omdbmultiplatform.presentation.entity.MovieUI
-import app.web.drjackycv.omdbmultiplatform.presentation.mapper.MoviesUIMapper
+import app.web.drjackycv.tmdbmultiplatform.R
+import app.web.drjackycv.tmdbmultiplatform.presentation.adapter.MoviesAdapter
+import app.web.drjackycv.tmdbmultiplatform.presentation.entity.MovieUI
+import app.web.drjackycv.tmdbmultiplatform.presentation.mapper.MoviesUIMapper
 import com.badoo.reaktive.observable.observeOn
 import com.badoo.reaktive.scheduler.mainScheduler
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,7 +16,7 @@ import presentation.base.ListViewModel
 import presentation.base.ViewModelBinding
 import presentation.movies.MoviesListViewModel
 
-private const val KEYWORD = "avenger"
+private const val KEYWORD = "avengers"
 
 class MainActivity : AppCompatActivity() {
 

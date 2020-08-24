@@ -1,8 +1,10 @@
-package data.entity
+package app.web.drjackycv.tmdbmultiplatform.presentation.entity
 
-private const val POSTER_PATH_BASE_URL = "https://image.tmdb.org/t/p/original"
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-data class Movie(
+@Parcelize
+data class MovieUI(
     val popularity: Double,
     val voteCount: Int,
     val video: Boolean,
@@ -17,5 +19,5 @@ data class Movie(
     val voteAverage: Double,
     val overview: String,
     val releaseDate: String,
-    val fullPosterPath: String = POSTER_PATH_BASE_URL + posterPath
-)
+    val fullPosterPath: String
+) : Parcelable

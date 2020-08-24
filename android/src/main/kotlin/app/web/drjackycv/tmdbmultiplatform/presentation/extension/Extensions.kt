@@ -1,4 +1,4 @@
-package app.web.drjackycv.omdbmultiplatform.presentation.extension
+package app.web.drjackycv.tmdbmultiplatform.presentation.extension
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.*

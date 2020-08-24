@@ -10,7 +10,7 @@
 import UIKit
 import shared
 
-private var KEYWORD = "avenger"
+private var KEYWORD = "avengers"
 
 class ViewController: UIViewController {
     private var _movies: [Movie]?

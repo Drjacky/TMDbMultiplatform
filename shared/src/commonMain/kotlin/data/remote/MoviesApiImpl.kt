@@ -4,15 +4,10 @@ import data.base.mapper.Mapper
 import data.base.remote.Api
 import data.entity.Movie
 import data.entity.MoviesResponse
-import io.ktor.client.HttpClient
-import io.ktor.client.request.HttpRequestBuilder
-import io.ktor.client.request.get
-import io.ktor.client.request.header
-import io.ktor.client.request.parameter
-import io.ktor.client.statement.HttpStatement
-import io.ktor.client.statement.readText
-import io.ktor.http.HttpHeaders
-import io.ktor.http.takeFrom
+import io.ktor.client.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+import io.ktor.http.*
 import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 
@@ -28,7 +23,7 @@ class MoviesApiImpl(
 
         val httpStatement = client.get<HttpStatement> {
             apiUrl()
-            parameter("s", request)
+            parameter("query", request)
         }
 
         val httpResponse = httpStatement.execute()
@@ -38,12 +33,13 @@ class MoviesApiImpl(
         val response = Json.nonstrict.parse(MoviesResponse.serializer(), json)
 
         return mapper.mapTo(response)
+
     }
 
     private fun HttpRequestBuilder.apiUrl(path: String? = null) {
         header(HttpHeaders.CacheControl, "no-cache")
         url {
-            takeFrom(hostUrl).parameters.append("apiKey", key)
+            takeFrom(hostUrl).parameters.append("api_key", key)
             path?.let {
                 encodedPath = it
             }
