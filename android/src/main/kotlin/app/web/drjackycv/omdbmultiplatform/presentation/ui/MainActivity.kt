@@ -16,7 +16,7 @@ import presentation.base.ListViewModel
 import presentation.base.ViewModelBinding
 import presentation.movies.MoviesListViewModel
 
-private const val KEYWORD = "avenger"
+private const val KEYWORD = "avengers"
 
 class MainActivity : AppCompatActivity() {
 

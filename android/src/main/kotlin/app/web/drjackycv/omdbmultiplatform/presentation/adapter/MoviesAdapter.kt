@@ -31,7 +31,7 @@ class MoviesAdapter : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = mItems[position]
 
-        holder.itemMovieImv.load(movie.poster)
+        holder.itemMovieImv.load(movie.fullPosterPath)
         holder.itemMovieTitleTxv.text = movie.title
     }
 

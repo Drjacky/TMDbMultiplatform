@@ -36,7 +36,7 @@ class MovieItem: UICollectionViewCell {
         didSet {
             guard let movie = movie else { return }
             
-            if let poster = URL(string: movie.poster) {
+            if let poster = URL(string: movie.fullPosterPath) {
                 Nuke.loadImage(with: poster, into: imgCover)
             }
             
