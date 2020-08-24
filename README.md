@@ -1,6 +1,6 @@
-# OMDbMultiplatform
-![License](https://img.shields.io/github/license/Drjacky/OMDbMultiplatform)
-![Article](https://raw.githubusercontent.com/Drjacky/OMDbMultiplatform/master/cover.jpg)
+# TMDbMultiplatform
+![License](https://img.shields.io/github/license/Drjacky/TMDbMultiplatform)
+![Article](https://raw.githubusercontent.com/Drjacky/TMDbMultiplatform/master/cover.jpg)
 Link to the [article](https://medium.com/@drjacky/kotlin-multiplatform-rx-mvvm-1fb21280a0b5)
 
 A Multiplatform project to show list of movies on iOS and Android.
@@ -27,4 +27,4 @@ A Multiplatform project to show list of movies on iOS and Android.
 Feel free to open a issue or submit a pull request for any bugs/improvements.
 
 ## Result 📺
-![Screenshot](https://raw.githubusercontent.com/Drjacky/OMDbMultiplatform/master/list.png)
+![Screenshot](https://raw.githubusercontent.com/Drjacky/TMDbMultiplatform/master/list.png)

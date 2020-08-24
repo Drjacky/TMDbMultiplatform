@@ -1,6 +1,6 @@
-package app.web.drjackycv.omdbmultiplatform.presentation.mapper
+package app.web.drjackycv.tmdbmultiplatform.presentation.mapper
 
-import app.web.drjackycv.omdbmultiplatform.presentation.entity.MovieUI
+import app.web.drjackycv.tmdbmultiplatform.presentation.entity.MovieUI
 import data.base.mapper.Mapper
 import data.entity.Movie
 

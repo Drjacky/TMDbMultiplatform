@@ -1,4 +1,4 @@
-package app.web.drjackycv.omdbmultiplatform.presentation.entity
+package app.web.drjackycv.tmdbmultiplatform.presentation.entity
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

@@ -1,4 +1,4 @@
-package app.web.drjackycv.omdbmultiplatform.presentation.extension
+package app.web.drjackycv.tmdbmultiplatform.presentation.extension
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,8 @@ import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import androidx.annotation.LayoutRes
 import androidx.appcompat.content.res.AppCompatResources
-import app.web.drjackycv.omdbmultiplatform.R
-import app.web.drjackycv.omdbmultiplatform.presentation.base.util.GlideApp
+import app.web.drjackycv.tmdbmultiplatform.R
+import app.web.drjackycv.tmdbmultiplatform.presentation.base.util.GlideApp
 import com.bumptech.glide.request.RequestOptions
 
 fun View.gone() {
