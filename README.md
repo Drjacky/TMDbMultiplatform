@@ -20,6 +20,7 @@ A Multiplatform project to show list of movies on iOS and Android.
 - Improve Clean Architecture approach and separate modules with the power of gradle
 - Categorize dependencies
 - Add tests
+- ~~Migrate from OMDb API to TMDb API~~
 - ~~Use a DI framework or a Service Locator~~
 
 ## Contributing 🤝
