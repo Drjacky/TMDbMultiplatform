@@ -12,7 +12,7 @@ val kodeinVersion: String by extra
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    kotlin("plugin.serialization") version "1.4.10" //org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
+    kotlin("plugin.serialization") version "1.4.20-RC" //org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
 }
 
 android {
