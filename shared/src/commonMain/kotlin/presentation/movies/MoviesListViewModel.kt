@@ -1,7 +1,7 @@
 package presentation.movies
 
 import com.badoo.reaktive.observable.*
-import com.badoo.reaktive.subject.publish.publishSubject
+import com.badoo.reaktive.subject.publish.PublishSubject
 import data.base.coroutines.singleFromCoroutine
 import data.base.mapper.Mapper
 import data.entity.Movie
@@ -21,11 +21,11 @@ class MoviesListViewModel<E>(
     override val result: Observable<List<E>>
 
     val useCase: UseCase<String, List<Movie>> by Di.di.instance("UseCase")
-    private val mListProperty = publishSubject<String>()
-    private val mLoadMoreProperty = publishSubject<String>()
+    private val mListProperty = PublishSubject<String>()// publishSubject<String>()
+    private val mLoadMoreProperty = PublishSubject<String>()//publishSubject<String>()
 
     init {
-        val loadingProperty = publishSubject<Boolean>()
+        val loadingProperty = PublishSubject<Boolean>()//publishSubject<Boolean>()
 
         val items = mutableListOf<E>()
 

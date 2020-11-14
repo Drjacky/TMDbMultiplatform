@@ -12,7 +12,7 @@ val kodeinVersion: String by extra
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    kotlin("plugin.serialization") version org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
+    kotlin("plugin.serialization") version "1.4.10" //org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
 }
 
 android {
@@ -47,7 +47,6 @@ kotlin {
         binaries {
             framework {
                 baseName = "shared"
-                freeCompilerArgs += "-Xobjc-generics"
             }
         }
     }
@@ -55,10 +54,12 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlin:kotlin-stdlib")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutinesVersion")
+                //implementation("org.jetbrains.kotlin:kotlin-stdlib")
+                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutinesVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
                 implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlinSerializationVersion")
+                //implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlinSerializationVersion")
+                //implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlinSerializationVersion")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("io.ktor:ktor-client-logging:$ktorVersion")
@@ -72,29 +73,31 @@ kotlin {
 
         val jvmMain by getting {
             dependencies {
-                api("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
-                api("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
-                api("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinSerializationVersion")
-                api("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
-                api("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-                api("io.ktor:ktor-client-core-jvm:$ktorVersion")
-                api("io.ktor:ktor-client-logging-jvm:$ktorVersion")
+                //api("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+                //api("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
+                //api("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$kotlinSerializationVersion")
+                //api("io.ktor:ktor-client-serialization-jvm:$ktorVersion")
+                //api("io.ktor:ktor-client-core-jvm:$ktorVersion")
+                //api("io.ktor:ktor-client-logging-jvm:$ktorVersion")
             }
         }
 
         val androidMain by getting {
             dependsOn(mobileMain)
             dependsOn(jvmMain)
+            dependencies {
+                //implementation("io.ktor:ktor-client-android:$ktorVersion")
+            }
         }
 
         val iosMain by getting {
             dependsOn(mobileMain)
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutinesVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlinSerializationVersion")
-                implementation("io.ktor:ktor-client-ios:$ktorVersion")
-                implementation("io.ktor:ktor-client-serialization-native:$ktorVersion")
-                implementation("io.ktor:ktor-client-logging-native:$ktorVersion")
+                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutinesVersion")
+                //implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlinSerializationVersion")
+                //implementation("io.ktor:ktor-client-ios:$ktorVersion")
+                //implementation("io.ktor:ktor-client-serialization-native:$ktorVersion")
+                //implementation("io.ktor:ktor-client-logging-native:$ktorVersion")
             }
         }
 

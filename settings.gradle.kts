@@ -10,7 +10,7 @@ pluginManagement {
     }
 }
 
-enableFeaturePreview("GRADLE_METADATA")
+//enableFeaturePreview("GRADLE_METADATA")
 
 
 include(":android", ":shared")

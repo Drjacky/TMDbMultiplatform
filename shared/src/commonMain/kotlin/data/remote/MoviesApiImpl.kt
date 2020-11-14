@@ -8,7 +8,7 @@ import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
-import kotlinx.serialization.UnstableDefault
+//import kotlinx.serialization.UnstableDefault
 import kotlinx.serialization.json.Json
 
 class MoviesApiImpl(
@@ -18,7 +18,7 @@ class MoviesApiImpl(
     private val mapper: Mapper<MoviesResponse, List<Movie>>
 ) : Api<String, List<Movie>> {
 
-    @OptIn(UnstableDefault::class)// = deprecated: @UseExperimental(UnstableDefault::class)
+    //@OptIn(UnstableDefault::class)// = deprecated: @UseExperimental(UnstableDefault::class)
     override suspend fun execute(request: String?): List<Movie> {
 
         val httpStatement = client.get<HttpStatement> {
@@ -30,7 +30,12 @@ class MoviesApiImpl(
 
         val json = httpResponse.readText()
 
-        val response = Json.nonstrict.parse(MoviesResponse.serializer(), json)
+        //val response = Json.nonstrict.parse(MoviesResponse.serializer(), json)
+        val response = Json {
+            ignoreUnknownKeys = true
+            isLenient = true
+        }
+            .decodeFromString(MoviesResponse.serializer(), json)
 
         return mapper.mapTo(response)
 
