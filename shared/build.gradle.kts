@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 val buildToolsVersion: String by project
 val kotlinVersion: String by extra
 val reactiveVersion: String by extra
+val reactiveNmtcVersion: String by extra
 val kotlinSerializationVersion: String by extra
 val ktorVersion: String by extra
 val coroutinesVersion: String by extra
@@ -58,6 +59,7 @@ kotlin {
                 //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutinesVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
                 implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
+                implementation("com.badoo.reaktive:coroutines-interop:$reactiveNmtcVersion")
                 //implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlinSerializationVersion")
                 //implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlinSerializationVersion")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
@@ -95,7 +97,7 @@ kotlin {
             dependencies {
                 //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutinesVersion")
                 //implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$kotlinSerializationVersion")
-                //implementation("io.ktor:ktor-client-ios:$ktorVersion")
+                implementation("io.ktor:ktor-client-ios:$ktorVersion")
                 //implementation("io.ktor:ktor-client-serialization-native:$ktorVersion")
                 //implementation("io.ktor:ktor-client-logging-native:$ktorVersion")
             }

@@ -1,8 +1,8 @@
 package presentation.movies
 
+import com.badoo.reaktive.coroutinesinterop.singleFromCoroutine
 import com.badoo.reaktive.observable.*
 import com.badoo.reaktive.subject.publish.PublishSubject
-import data.base.coroutines.singleFromCoroutine
 import data.base.mapper.Mapper
 import data.entity.Movie
 import di.Di
