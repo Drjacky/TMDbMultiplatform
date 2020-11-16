@@ -22,7 +22,7 @@ A Multiplatform project to show list of movies on iOS and Android.
 - Add tests
 - ~~Migrate from OMDb API to TMDb API~~
 - ~~Use a DI framework or a Service Locator~~
-- ~~Migrate to Kotlin 1.4.X. FTo see changes, click [here](https://github.com/Drjacky/TMDbMultiplatform/pull/3/files)~~~
+- ~~Migrate to Kotlin 1.4.X. To see changes, click [here](https://github.com/Drjacky/TMDbMultiplatform/pull/3/files).~~
 
 ## Contributing 🤝
 
