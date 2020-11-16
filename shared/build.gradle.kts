@@ -12,7 +12,7 @@ val kodeinVersion: String by extra
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    kotlin("plugin.serialization") version "1.4.20-RC" //org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
+    kotlin("plugin.serialization") version "1.4.0" //org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
 }
 
 android {
@@ -98,6 +98,8 @@ kotlin {
                 //implementation("io.ktor:ktor-client-ios:$ktorVersion")
                 //implementation("io.ktor:ktor-client-serialization-native:$ktorVersion")
                 //implementation("io.ktor:ktor-client-logging-native:$ktorVersion")
+
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
             }
         }
 
