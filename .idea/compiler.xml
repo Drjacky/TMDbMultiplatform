@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.8">
       <module name="shared_androidMain" target="1.6" />
       <module name="shared_androidTest" target="1.6" />
       <module name="shared_commonMain" target="1.8" />
@@ -9,6 +9,10 @@
       <module name="shared_jvmMain" target="1.8" />
       <module name="shared_jvmTest" target="1.8" />
       <module name="shared_mobileMain" target="1.6" />
+      <module name="TMDbMultiplatform.shared.commonMain" target="1.8" />
+      <module name="TMDbMultiplatform.shared.commonTest" target="1.8" />
+      <module name="TMDbMultiplatform.shared.jvmMain" target="1.8" />
+      <module name="TMDbMultiplatform.shared.jvmTest" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

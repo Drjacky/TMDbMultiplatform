@@ -3,10 +3,19 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in ViewController._viewModel.getter:ViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "ViewController.binding():ViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "result">
+            </PersistentString>
+            <PersistentString
+               value = "_binding">
+            </PersistentString>
+            <PersistentString
+               value = "_viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -14,7 +23,21 @@
          contextName = "closure #1 in ViewController.binding():ViewController.swift">
          <PersistentStrings>
             <PersistentString
+               value = "strongSelf._isRefreshing">
+            </PersistentString>
+            <PersistentString
+               value = "_viewModel">
+            </PersistentString>
+            <PersistentString
                value = "strongSelf">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "_viewModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

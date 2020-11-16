@@ -27,6 +27,7 @@ tasks.withType<KotlinCompile> {
 allprojects {
     repositories {
         mavenCentral()
+        maven("https://dl.bintray.com/kodein-framework/kodein-dev")
         maven("https://dl.bintray.com/kotlin/kotlinx")
         maven("https://dl.bintray.com/kotlin/ktor")
         maven("https://dl.bintray.com/kotlin/kotlin-dev")
