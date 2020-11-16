@@ -98,8 +98,6 @@ kotlin {
                 //implementation("io.ktor:ktor-client-ios:$ktorVersion")
                 //implementation("io.ktor:ktor-client-serialization-native:$ktorVersion")
                 //implementation("io.ktor:ktor-client-logging-native:$ktorVersion")
-
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1")
             }
         }
 
