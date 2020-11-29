@@ -32,5 +32,5 @@ Feel free to open a issue or submit a pull request for any bugs/improvements.
 ## Result 📺
 ![Screenshot](https://raw.githubusercontent.com/Drjacky/TMDbMultiplatform/master/list.png)
 
-## License
+## License ⚖️
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDrjacky%2FTMDbMultiplatform.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FDrjacky%2FTMDbMultiplatform?ref=badge_large)
