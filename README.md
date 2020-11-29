@@ -1,6 +1,7 @@
 # TMDbMultiplatform
 ![License](https://img.shields.io/github/license/Drjacky/TMDbMultiplatform)
 ![Article](https://raw.githubusercontent.com/Drjacky/TMDbMultiplatform/master/cover.jpg)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDrjacky%2FTMDbMultiplatform.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FDrjacky%2FTMDbMultiplatform?ref=badge_shield)
 Link to the [article](https://medium.com/@drjacky/kotlin-multiplatform-rx-mvvm-1fb21280a0b5)
 
 A Multiplatform project to show list of movies on iOS and Android.
@@ -30,3 +31,6 @@ Feel free to open a issue or submit a pull request for any bugs/improvements.
 
 ## Result 📺
 ![Screenshot](https://raw.githubusercontent.com/Drjacky/TMDbMultiplatform/master/list.png)
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDrjacky%2FTMDbMultiplatform.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FDrjacky%2FTMDbMultiplatform?ref=badge_large)
