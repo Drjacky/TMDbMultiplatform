@@ -1,6 +1,7 @@
 # TMDbMultiplatform
 ![License](https://img.shields.io/github/license/Drjacky/TMDbMultiplatform)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDrjacky%2FTMDbMultiplatform.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FDrjacky%2FTMDbMultiplatform?ref=badge_shield)
+[![Android Weekly](https://img.shields.io/badge/Android%20Weekly-%23425-blue)](https://androidweekly.net/issues/issue-425)
 ![Article](https://raw.githubusercontent.com/Drjacky/TMDbMultiplatform/master/cover.jpg)
 Link to the [article](https://medium.com/@drjacky/kotlin-multiplatform-rx-mvvm-1fb21280a0b5)
 
