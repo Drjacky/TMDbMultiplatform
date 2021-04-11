@@ -13,7 +13,7 @@ val kodeinVersion: String by extra
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
-    kotlin("plugin.serialization") version "1.4.0" //org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
+    kotlin("plugin.serialization") version "1.4.30" //org.jetbrains.kotlin.config.KotlinCompilerVersion.VERSION
 }
 
 android {
@@ -57,7 +57,11 @@ kotlin {
             dependencies {
                 //implementation("org.jetbrains.kotlin:kotlin-stdlib")
                 //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutinesVersion")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion") {
+                    version {
+                        strictly(coroutinesVersion)
+                    }
+                }
                 implementation("com.badoo.reaktive:reaktive:$reactiveVersion")
                 implementation("com.badoo.reaktive:coroutines-interop:$reactiveNmtcVersion")
                 //implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$kotlinSerializationVersion")
