@@ -5,6 +5,8 @@ val kotlinVersion: String by project
 val androidxBaseVersion: String by project
 val androidxUiVersion: String by project
 val androidMaterialVersion: String by project
+val androidxSwipeRefreshLayoutVersion: String by project
+val androidxRecyclerviewVersion: String by project
 val androidConstraintLayoutVersion: String by project
 val androidMultidexVersion: String by project
 val ktorVersion: String by project
@@ -67,6 +69,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:$androidxBaseVersion")
     implementation("androidx.core:core-ktx:$androidxBaseVersion")
     implementation("com.google.android.material:material:$androidMaterialVersion")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:$androidxSwipeRefreshLayoutVersion")
+    implementation("androidx.recyclerview:recyclerview:$androidxRecyclerviewVersion")
     implementation("androidx.constraintlayout:constraintlayout:$androidConstraintLayoutVersion")
     implementation("com.android.support:multidex:$androidMultidexVersion")
     implementation("io.ktor:ktor-client-android:$ktorVersion")
